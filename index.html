@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xreducation Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light">
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Xreducation</h2>
+            <button id="toggleSidebar">☰</button>
+        </div>
+        <nav class="menu">
+            <a href="#" class="active" data-section="dashboard">Dashboard</a>
+            <a href="#" data-section="courses">Cours</a>
+            <a href="#" data-section="students">Étudiants</a>
+            <a href="#" data-section="revenue">Revenus</a>
+            <a href="#" data-section="settings">Paramètres</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="search">
+                <input type="text" placeholder="Rechercher...">
+            </div>
+            <div class="header-right">
+                <button id="themeToggle">🌙</button>
+
+                <!-- Notifications -->
+                <div class="notifications">
+                    🔔<span class="badge">3</span>
+                    <div class="dropdown">
+                        <ul></ul>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                <div class="messages">
+                    ✉️<span class="badge">2</span>
+                    <div class="dropdown">
+                        <ul></ul>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <span>Admin</span>
+                    <img src="https://i.pravatar.cc/40" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <!-- Sections -->
+        <section id="dashboard" class="section">
+            <div class="cards">
+                <div class="card"><h3>Étudiants</h3><p>1,234</p></div>
+                <div class="card"><h3>Cours</h3><p>56</p></div>
+                <div class="card"><h3>Revenus</h3><p>$12,345</p></div>
+                <div class="card"><h3>Feedback</h3><p>89</p></div>
+            </div>
+        </section>
+
+        <section id="courses" class="section" style="display:none">
+            <h2>Liste des Cours</h2>
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="studentsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="students" class="section" style="display:none">
+            <h2>Liste des Étudiants</h2>
+            <div class="recent">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Cours inscrit</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sara</td><td>sara@mail.com</td><td>Mathématiques</td><td>10/11/2025</td></tr>
+                        <tr><td>Ahmed</td><td>ahmed@mail.com</td><td>Physique</td><td>09/11/2025</td></tr>
+                        <tr><td>Leila</td><td>leila@mail.com</td><td>Informatique</td><td>08/11/2025</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="revenue" class="section" style="display:none">
+            <h2>Revenus</h2>
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="revenueChart2"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="settings" class="section" style="display:none">
+            <h2>Paramètres</h2>
+            <p>Configuration du dashboard...</p>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
